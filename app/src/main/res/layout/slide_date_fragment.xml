@@ -1,9 +1,23 @@
 <!-- fragment_screen_slide_page.xml -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/content"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_height="match_parent"
+    >
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom|right"
+        android:src="@drawable/ic_add_black_24dp"
+        android:layout_marginBottom="24dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/card_view_2"
+        android:layout_alignEnd="@+id/card_view_2"
+        android:layout_marginRight="24dp"
+        android:layout_marginEnd="24dp"
+        android:id="@+id/addExercise"/>
 
     <!--Date card-->
     <android.support.v7.widget.CardView
@@ -24,12 +38,14 @@
             />
     </android.support.v7.widget.CardView>
 
+
     <!--Exercise Header Card-->
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/card_view"
         android:layout_margin="10dp"
-        >
+        android:id="@+id/card_view_2">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -60,66 +76,77 @@
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
-    <!--Editable Workout card-->
-    <android.support.v7.widget.CardView
+    <!--&lt;!&ndash;Editable Workout card&ndash;&gt;-->
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/workout_log"
-        android:layout_margin="10dp">
-
-        <ScrollView
+        android:layout_below="@+id/card_view_2"
+        >
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/exerciseCardList">
+        <!--<android.support.v7.widget.CardView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/workout_card"-->
+            <!--android:layout_margin="10dp">-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="vertical"-->
+                        <!--android:id="@+id/newSetLayout">-->
 
-                    <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Exercise 1"
-                        android:textSize="25sp"
-                        android:id="@+id/editText"
-                        android:background="@android:color/transparent"
-                        android:layout_marginBottom="10sp"
-                        />
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:weightSum="1">
+                        <!--<EditText-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="Exercise"-->
+                            <!--android:textSize="25sp"-->
+                            <!--android:id="@+id/editText"-->
+                            <!--android:background="@android:color/transparent"-->
+                            <!--android:layout_marginBottom="10sp"-->
+                            <!--/>-->
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:weightSum="1"-->
+                            <!--android:id="@+id/ExerciseSet">-->
 
-                        <TextView
-                            android:layout_width="193dp"
-                            android:layout_height="wrap_content"
-                            android:text="Set 1"
-                            android:textSize="20sp"/>
-                        <EditText
-                            android:layout_width="90dp"
-                            android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:text="3"
-                            android:background="@android:color/transparent"/>
-                        <EditText
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="135"
-                            android:textSize="20sp"
-                            android:background="@android:color/transparent"/>
+                            <!--<TextView-->
+                                <!--android:layout_width="193px"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="Set 1"-->
+                                <!--android:textSize="20sp"/>-->
+                            <!--<EditText-->
+                                <!--android:layout_width="90px"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:textSize="20sp"-->
+                                <!--android:text="3"-->
+                                <!--android:background="@android:color/transparent"/>-->
+                            <!--<EditText-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="135"-->
+                                <!--android:textSize="20sp"-->
+                                <!--android:background="@android:color/transparent"/>-->
+
+                        <!--</LinearLayout>-->
+
+                    <!--</LinearLayout>-->
+            <!--<Button-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Add a set"-->
+                <!--style="?android:attr/borderlessButtonStyle"-->
+                <!--android:onClick="newSet"/>-->
+
+        <!--</android.support.v7.widget.CardView>-->
+        </LinearLayout>
+
+    </ScrollView>
 
 
-                    </LinearLayout>
-
-
-
-                </LinearLayout>
-
-
-        </ScrollView>
-
-    </android.support.v7.widget.CardView>
-
-
-
-</LinearLayout>
+</RelativeLayout>
