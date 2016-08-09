@@ -143,7 +143,7 @@ public class Workout extends AppCompatActivity {
 
             View rootView = inflater.inflate(R.layout.slide_date_fragment, container, false);
             View newText = (TextView) rootView.findViewById(R.id.datefrag);
-            Button newExerciseBttn = (Button) rootView.findViewById(R.id.addExercise);
+            FloatingActionButton newExerciseBttn = (FloatingActionButton) rootView.findViewById(R.id.addExercise);
 
             //Adds date to the card
             if (getArguments().getString("date") != null) {
@@ -158,7 +158,7 @@ public class Workout extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     ExerciseCardFrag newExerciseCarad = ExerciseCardFrag.newInstance();
-                    ft.add(R.id.exerciseCardList, newExerciseCarad).commit();
+                    ft.add(R.id.exerciseCardList, newExerciseCarad);
                 }
             });
 
