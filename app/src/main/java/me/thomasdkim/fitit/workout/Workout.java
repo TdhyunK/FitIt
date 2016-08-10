@@ -157,11 +157,12 @@ public class Workout extends AppCompatActivity {
             newExerciseBttn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ExerciseCardFrag newExerciseCarad = ExerciseCardFrag.newInstance();
-                    ft.add(R.id.exerciseCardList, newExerciseCarad);
+                    FragmentTransaction newFt = getChildFragmentManager().beginTransaction();
+                    ExerciseCardFrag newExerciseCard = ExerciseCardFrag.newInstance();
+                    newFt.add(R.id.exerciseCardList, newExerciseCard).commit();
+
                 }
             });
-
 
             return rootView;
         }
